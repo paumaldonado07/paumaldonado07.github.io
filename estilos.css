@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
+html {
+    text-size-adjust: none; /* Para Safari */
+    -webkit-text-size-adjust: none; /* Para Chrome y Safari */
+    -moz-text-size-adjust: none; /* Para Firefox */
+    -ms-text-size-adjust: none; /* Para Edge */
+}
+
 /* Asegura que el body ocupa toda la pantalla */
 body {
     display: flex;
