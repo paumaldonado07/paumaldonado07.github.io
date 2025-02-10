@@ -10,13 +10,13 @@
     <div class="containerPrincipal">
         <header>
             <div class="containerCabecera">
-                <h1>M&Eacute;TODO WALDORF</h1>
+                <h1>MÉTODO WALDORF</h1>
             </div>
         </header>
         <nav class="containerNavegacion">
-            <div class="botonNavegacion" style="background-color: #ffb6bc;"><a href="index.html">DEFINICI&Oacute;N MÉTODO WALDORF</a></div>
-            <div class="botonNavegacion" style="background-color: #A7D8FF;"><a href="paginaCreacionCirculos.html">CREACI&Oacute;N DE CIRCULOS WALDORF</a></div>
-            <div class="botonNavegacion" style="background-color: #e0bbfd;"><a href="paginaUsosCirculos.html">USO DE CIRCULOS WALDORF</a></div>
+            <div class="botonNavegacion" style="background-color: #ffb6bc;"><a href="index.html">DEFINICIÓN MÉTODO WALDORF</a></div>
+            <div class="botonNavegacion" style="background-color: #A7D8FF;"><a href="paginaCreacionCirculos.html">CREACIÓN DE CÍRCULOS WALDORF</a></div>
+            <div class="botonNavegacion" style="background-color: #e0bbfd;"><a href="paginaUsosCirculos.html">USO DE CÍRCULOS WALDORF</a></div>
         </nav>
     <main class="containerContenido">
         <aside>
@@ -64,48 +64,55 @@
             let signoIgual = document.getElementById("signo");
             let operacionX = document.getElementById("operacionX");
 
-            let n1 = 3;
-            let n2 = Math.floor(Math.random() * 11);  // Inicializa el número aleatorio
-            let aciertos = 0, totalIntentos = 11;
+            let aciertos = 0;
+            let totalIntentos = 11;
+            let numerosDisponibles = Array.from({ length: 11 }, (_, i) => i); // Números del 0 al 10 sin repetir
+
+            function obtenerNumeroAleatorio() {
+                if (numerosDisponibles.length === 0) return null;
+                let indiceAleatorio = Math.floor(Math.random() * numerosDisponibles.length);
+                return numerosDisponibles.splice(indiceAleatorio, 1)[0];
+            }
 
             function multiplicarx1() {
                 let imagenEstado = document.getElementById("imagenEstado");
-                
-                if (aciertos >= totalIntentos) {
+
+                if (numerosDisponibles.length === 0) {
                     let mensajeFinal = aciertos > 7 
                         ? `<img src="Imagenes/imgAciertoAlto.gif" width="100%"> </br> <div style="font-size:3vw"> Tienes ${aciertos} respuestas correctas.</div>` 
-                        : `<img src="Imagenes/imgAciertoBajo.gif" width="100%"> </br> <div style="font-size:3vw"> Tienes ${aciertos} respuestas correctas. </div> `;
-
+                        : `<img src="Imagenes/imgAciertoBajo.gif" width="100%"> </br> <div style="font-size:3vw"> Tienes ${aciertos} respuestas correctas. </div>`;
                     mensaje.innerHTML = mensajeFinal;
-                    puntuacion.innerHTML = `Tu puntuación final: ${aciertos} / ${totalIntentos}`;
-
-                    botonSiguiente.style.display = "none"; 
-                    botonCorregir.style.display = "none";  
-                    respUser.style.display = "none"; 
-                    botonReiniciar.style.display = "inline-block"; 
-                    botonRegresar.style.display = "block"; // Mostrar el botón REGRESAR en el contenedor
-                } else {
-                    mensaje.innerHTML = "";
-                    num1.innerHTML = n1;
-                    num2.innerHTML = n2;
-                    respUser.value = ""; 
-                    respUser.style.display = "inline-block"; 
-                    botonCorregir.style.display = "inline-block"; 
-                    botonSiguiente.style.display = "none"; 
-                    respUser.focus();
-
-                    num1.style.display = "inline";
-                    num2.style.display = "inline";
-                    operacionX.style.display = "inline";
-                    signoIgual.style.display = "inline";
-                    
-                    // Cambiar la imagen en el aside a num1_Feliz.gif al ir a la siguiente operación
-                    imagenEstado.src = "Imagenes/num3_Feliz.gif";
+                    puntuacion.innerHTML = `✅ Respuestas correctas: ${aciertos} de ${totalIntentos}`;
+                    botonSiguiente.style.display = "none";
+                    botonReiniciar.style.display = "inline-block";
+                    botonRegresar.style.display = "inline-block";
+                    return;
                 }
+
+                mensaje.innerHTML = "";
+                num1.innerHTML = 3;
+                let nuevoNumero = obtenerNumeroAleatorio();
+                if (nuevoNumero === null) return;
+
+                num2.innerHTML = nuevoNumero;
+                respUser.value = ""; 
+                respUser.style.display = "inline-block"; 
+                botonCorregir.style.display = "inline-block"; 
+                botonSiguiente.style.display = "none"; 
+                respUser.focus();
+
+                num1.style.display = "inline";
+                num2.style.display = "inline";
+                operacionX.style.display = "inline";
+                signoIgual.style.display = "inline";
+                
+                imagenEstado.src = "Imagenes/num2_Feliz.gif";
             }
 
             function corregir() {
                 let imagenEstado = document.getElementById("imagenEstado");
+                let solucion = parseInt(num1.innerHTML) * parseInt(num2.innerHTML);
+                let respuestaUsuario = respUser.value.trim();
 
                 if (respUser.value === "") {
                     num1.style.display = "none";
@@ -133,18 +140,12 @@
                     return;
                 }
 
-                let solucion = n1 * n2;
-                if (parseInt(respUser.value) === solucion) {
+                if (parseInt(respuestaUsuario) === solucion) {
                     mensaje.innerHTML = '<img src="Imagenes/imgCorrecto.gif" width="100%" style="padding-top: 45px">';
                     aciertos++; 
-                    
-                    // Cambiar la imagen en el aside a num1_Feliz (respuesta correcta)
                     imagenEstado.src = "Imagenes/num3_Feliz.gif"; 
-
                 } else {
                     mensaje.innerHTML = '<img src="Imagenes/imgIncorrecto.gif" width="100%" style="padding-top: 45px">';
-                    
-                    // Cambiar la imagen en el aside a num1_Triste (respuesta incorrecta)
                     imagenEstado.src = "Imagenes/num3_Triste.gif"; 
                 }
 
@@ -153,34 +154,11 @@
                 operacionX.style.display = "none";
                 signoIgual.style.display = "none";
 
-                n2 = Math.floor(Math.random() * 11);  // Genera un nuevo número aleatorio para la siguiente multiplicación
-
                 respUser.style.display = "none";
                 botonCorregir.style.display = "none";
-
                 botonSiguiente.style.display = "inline-block";
-            }
-
-            function reiniciar() {
-                aciertos = 0;
-                n2 = Math.floor(Math.random() * 11);  // Reiniciar también el valor aleatorio de n2
-
-                mensaje.innerHTML = "";
-                puntuacion.innerHTML = "";
-
-                botonReiniciar.style.display = "none";
-                botonRegresar.style.display = "none"; // Ocultar el botón REGRESAR
-
-                multiplicarx1();
-                
             }
         </script>
     </main>
-    <footer class="containerPiePagina">
-        <div class="containerPiePagina2">23 de Enero de 2025</div>
-        <div class="containerPiePagina2">Método Waldorf</div>
-        <div class="containerPiePagina2">@phej_auly</div>
-    </footer>
-    </div>
 </body>
 </html>
