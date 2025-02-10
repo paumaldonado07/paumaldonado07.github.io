@@ -22,7 +22,7 @@ body {
 
 
 .containerTituloSeparadoTexto {
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     font-size: 200%;
     font-weight: normal; 
     border-radius: 15px;
@@ -48,7 +48,7 @@ body {
     text-align: center;
     box-sizing: border-box;
     border-radius: 15px;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     font-weight: normal; 
     border-radius: 15px;
     text-shadow: 2px 2px 0px white;
@@ -94,7 +94,7 @@ h1 {
     text-align: center;
     flex: 1 1 auto;
     max-width: 220px;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -161,7 +161,7 @@ h1 {
     border-radius: 5px;
     padding: 2px;
     text-align: center;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     text-shadow: 2px 2px 0px white;
 }
 
@@ -178,7 +178,7 @@ h1 {
     gap: 10px;
     margin: 10px 0; /* Añade espacio alrededor del pie de página */
     margin: 10px;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     border-radius: 15px;
     font-weight: bold;
 }
@@ -213,7 +213,7 @@ h1 {
     text-align: center;
     flex: 1 1 auto; /* Hace los botones adaptables */
     max-width: 200px;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     }
 
 .botonNavegacionTablas:hover {
@@ -231,7 +231,7 @@ h1 {
     flex: 1 1 auto; /* Hace los botones adaptables */
     max-width: 300px;
     max-height: 300px;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     font-size: 150%;
     margin: 20px;
     }
@@ -263,7 +263,7 @@ h1 {
     text-align: center;
     margin-bottom: 20px;
     box-shadow: 0px 3px black; 
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     margin: 0px auto 20px auto; 
     text-align: center;
 }
@@ -291,7 +291,7 @@ h1 {
     padding: 10px;
     padding-bottom: 0px;
     text-align: center;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     font-size: 10vw;
     margin-bottom: 40px;
 }
@@ -315,7 +315,7 @@ h1 {
     margin: 20px auto 0; /* Esto centra el botón */
     display: block; /* Asegura que el botón se comporte como bloque */
     box-shadow: 0px 3px black; 
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     text-align: center;
     cursor: pointer; 
     font-size: 18px;
@@ -336,7 +336,7 @@ h1 {
     text-align: center;
     margin: 20px auto 0; /* Esto centra el botón */
     display: block; /* Asegura que el botón se comporte como bloque */
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     text-align: center;
     cursor: pointer; 
     font-size: 18px;
@@ -351,7 +351,7 @@ h1 {
     margin: 20px auto 0; /* Esto centra el botón */
     display: block; /* Asegura que el botón se comporte como bloque */
     box-shadow: 0px 3px black; 
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     text-align: center;
     cursor: pointer; 
     font-size: 18px;
@@ -373,7 +373,7 @@ h1 {
 }
 
 .texto{
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     text-align: justify;
     padding: 5px 20px;
 }
@@ -382,7 +382,7 @@ h1 {
     padding: 10px;
     color: black;
     text-align: center;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     font-size: 150%;
     display: flex;
     flex-wrap: wrap;
@@ -397,7 +397,7 @@ h1 {
     padding: 10px;
     flex: 1 1 auto;
     max-width: 200px;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     font-size: 70%;
     margin: 20px;
     text-align: center;
@@ -419,7 +419,7 @@ h1 {
 }
 
 .textoPasos {
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     text-align: justify;
 }
 
@@ -429,7 +429,7 @@ h1 {
     border-radius: 5px;
     padding: 10px;
     max-width: 300px;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     font-size: 70%;
     margin: 10px;
     text-align: center; /* Centra el texto dentro del div */
@@ -444,7 +444,7 @@ h1 {
     padding: 10px;
     color: black;
     text-align: center;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     font-size: 150%;
     display: flex;
     flex-wrap: wrap;
@@ -459,7 +459,7 @@ h1 {
     border-radius: 5px;
     padding: 10px;
     flex: 1 1 300px; /* Mínimo de 300px, ajustándose según el espacio disponible */
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS', 'Patrick Hand', cursive !important;
     text-align: center;
     margin: 20px;
     max-width: 45%; /* Para que en pantallas grandes no sean excesivamente anchos */
