@@ -450,10 +450,11 @@ h1 {
     border: 2px solid black;
     border-radius: 5px;
     padding: 10px;
-    flex: 1 1 auto;
+    flex: 1 1 300px; /* Mínimo de 300px, ajustándose según el espacio disponible */
     font-family: 'Comic Sans MS', cursive;
     text-align: center;
     margin: 20px;
+    max-width: 45%; /* Para que en pantallas grandes no sean excesivamente anchos */
 }
 
 /* Estilos específicos para las tablas normales */
@@ -465,6 +466,25 @@ h1 {
     max-width: 20%;
     height: 70%;
 }
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .containerTablasSerie {
+        font-size: 120%; /* Reduce el tamaño de fuente para mejorar la lectura */
+    }
+
+    .tablasSerie, .tablasSerieVideo {
+        flex: 1 1 100%; /* En móviles ocupa todo el ancho disponible */
+        max-width: 90%; /* Evita que se vea demasiado grande */
+        margin: 10px; /* Reduce el margen para mejor ajuste */
+    }
+
+    .tablasSerieMayor {
+        max-width: 50%; /* Permite que se mantenga visible */
+        height: auto;
+    }
+}
+
 
 /* Estilos específicos para los videos */
 .tablasSerieVideo {
