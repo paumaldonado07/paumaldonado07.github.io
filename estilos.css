@@ -1,0 +1,480 @@
+/* Asegura que el body ocupa toda la pantalla */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Titulos H1 */ 
+
+/*Titulos H2 */ 
+
+
+.containerTituloSeparadoTexto {
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 200%;
+    font-weight: normal; 
+    border-radius: 15px;
+}
+
+/* Contenedor principal con flex y 100% de ancho */
+.containerPrincipal {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: white;
+    /*border: 2px solid black;*/
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+/* Cabecera adaptable */
+.containerCabecera {
+    background-color: #F8E59C;
+    margin: 10px;
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 15px;
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: normal; 
+    border-radius: 15px;
+    text-shadow: 2px 2px 0px white;
+    white-space: nowrap;
+
+}
+
+h1 {
+    animation: floatInPlace 3s ease-in-out infinite; /* Animación suave de flotado en el mismo lugar */
+    font-size: 5vw;
+}
+
+@keyframes floatInPlace {
+    0% {
+        transform: translateY(0); /* Posición inicial */
+    }
+    50% {
+        transform: translateY(-10px); /* Se eleva un poco */
+    }
+    100% {
+        transform: translateY(0); /* Vuelve a la posición original */
+    }
+}
+
+/* Navegación centrada (sin fondo blanco) */
+.containerNavegacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 10px;
+    background-color: transparent; /* Elimina fondo blanco */
+    box-sizing: border-box;
+    margin: 0; /* Sin márgenes para ajustar mejor */
+    
+}
+
+.botonNavegacion {
+    border: 2px solid black; 
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 3px black; 
+    text-align: center;
+    flex: 1 1 auto;
+    max-width: 220px;
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.botonNavegacion:hover {
+    box-shadow: 0px 3px black; 
+    transform: scale(1.1);
+    border: 2px solid black;
+    filter: brightness(1.2);  
+}
+
+.botonNavegacion:active {
+    background-color: #FFB7B2; /* Rosa más oscuro */
+    box-shadow: inset 3px 3px #A8E6CF; /* Verde menta claro */
+    transform: scale(0.95);
+}
+
+ /*No mostrar en el diseño hipervinculos*/
+ a{
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: black; 
+ }
+
+/* Contenido principal en formato adaptable */
+.containerContenido {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.containerAside {
+    background-color: #E6E6FA;
+    border: 2px solid black;
+    padding: 10px;
+    flex: 1 1 200px;
+    max-width: 300px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.containerAside:hover {
+    transform: scale(1.05);
+}
+
+.containerCuerpo {
+    background-color: #b8ffb8;
+    border: 2px solid black;
+    padding: 10px;
+    flex: 2 1 400px;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+/* Títulos dentro del contenido */
+.containerTitulo {
+    background-color: #FFD93D;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 2px;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive;
+    text-shadow: 2px 2px 0px white;
+}
+
+/* Pie de página mejorado */
+.containerPiePagina {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; /* Centra verticalmente el contenido */
+    padding: 10px;
+    background-color: #F8E59C;
+    border: 2px solid black;
+    box-sizing: border-box;
+    gap: 10px;
+    margin: 10px 0; /* Añade espacio alrededor del pie de página */
+    margin: 10px;
+    font-family: 'Comic Sans MS', cursive;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.containerPiePagina2 {
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 14px; /* Ajusta el tamaño del texto */
+    padding: 5px;
+}
+
+.containerNavegacionTablas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    padding: 10px;
+    background-color: transparent; /* Elimina fondo blanco */
+    box-sizing: border-box;
+    margin: 0; /* Sin márgenes para ajustar mejor */
+    padding: 40px;
+    max-height: 2500px;
+}
+
+.botonNavegacionTablas {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 3px 3px 3px 3px black;
+    color: black;
+    text-align: center;
+    flex: 1 1 auto; /* Hace los botones adaptables */
+    max-width: 200px;
+    font-family: 'Comic Sans MS', cursive;
+    }
+
+.botonNavegacionTablas:hover {
+    transform: scale(1.3);
+}
+
+.botonNavegacionTablasModo {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 3px 3px 3px 3px black;
+    color: black;
+    text-align: center;
+    flex: 1 1 auto; /* Hace los botones adaptables */
+    max-width: 300px;
+    max-height: 300px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 150%;
+    margin: 20px;
+    }
+
+.botonNavegacionTablasModo:hover {
+    transform: scale(1.3);
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.containerTituloSeparado {
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px;
+    max-width: 700px;
+    text-align: center;
+    margin: 30px auto 0 auto;
+    display: flex;  /* Activa flexbox */
+    align-items: center;  /* Alinea verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    gap: 10px;  /* Espacio entre los elementos */
+}
+
+.botonRegresar{
+    background-color: #FFD93D;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    width: 120px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px black; 
+    font-family: 'Comic Sans MS', cursive;
+    margin: 0px auto 20px auto; 
+    text-align: center;
+}
+
+.botonRegresar:hover {
+    box-shadow: 0px 3px black; 
+    transform: scale(1.1);
+    border: 2px solid black;
+    filter: brightness(1.2);  
+}
+
+.containerContenidoMultiplicacion{
+    justify-content: center;
+    background-color: #fccf1e;
+    border: 2px solid black;
+    margin: 20px auto 0 auto;
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin-top: 40px;
+}
+
+.tablaMostrarNumeros{
+    border-radius: 5px;
+    padding: 10px;
+    padding-bottom: 0px;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 10vw;
+    margin-bottom: 40px;
+}
+
+#respuesta {
+    width: 30%; /* Ocupa todo el ancho del contenedor */
+    font-size: 7vw;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    border-radius: 5px; /* Opcional: mantiene la apariencia redondeada */
+    padding: 10px; /* Opcional: ajusta el padding si es necesario */
+    text-align: center; /* Centra el texto dentro del cuadro */
+}
+
+
+#corregir {
+    background-color: #a6fff0;
+    border: 2px solid black;        
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    margin: 20px auto 0; /* Esto centra el botón */
+    display: block; /* Asegura que el botón se comporte como bloque */
+    box-shadow: 0px 3px black; 
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    cursor: pointer; 
+    font-size: 18px;
+}
+
+#corregir:hover {
+    box-shadow: 0px 3px black; 
+    transform: scale(1.1);
+    border: 2px solid black;
+    filter: brightness(1.2);  
+}
+
+#reiniciar {
+    background-color: #a6fff0;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    margin: 20px auto 0; /* Esto centra el botón */
+    display: block; /* Asegura que el botón se comporte como bloque */
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    cursor: pointer; 
+    font-size: 18px;
+}
+
+#siguiente {
+    background-color: #a6fff0;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    margin: 20px auto 0; /* Esto centra el botón */
+    display: block; /* Asegura que el botón se comporte como bloque */
+    box-shadow: 0px 3px black; 
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    cursor: pointer; 
+    font-size: 18px;
+}
+    
+#siguiente:hover {
+    box-shadow: 0px 3px black; 
+    transform: scale(1.1);
+    border: 2px solid black;
+    filter: brightness(1.2);  
+}
+
+.botones-container {
+    justify-content: flex-end; /* Mueve los botones a la derecha */
+    padding: 20px; /* Espacio alrededor */
+    width: 100%; /* Ocupa todo el ancho */
+    box-sizing: border-box; /* Evita que el padding afecte el tamaño */
+    text-align: center;
+}
+
+.texto{
+    font-family: 'Comic Sans MS', cursive;
+    text-align: justify;
+    padding: 5px 20px;
+}
+
+.containerMateriales {
+    padding: 10px;
+    color: black;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 150%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.materiales {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    flex: 1 1 auto;
+    max-width: 200px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 70%;
+    margin: 20px;
+    text-align: center;
+}
+
+.containerMayorPasos {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente si el contenedor tiene altura */
+    padding: 2px;
+    text-align: center;
+}
+
+.containerPasos {
+    display: flex; 
+    align-items: center; /* Alinea verticalmente la imagen y el texto */
+    margin: 10px 10px 0px 10px;
+}
+
+.textoPasos {
+    font-family: 'Comic Sans MS', cursive;
+    text-align: justify;
+}
+
+.pasos {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    max-width: 300px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 70%;
+    margin: 10px;
+    text-align: center; /* Centra el texto dentro del div */
+}
+
+.imagenPasosNum {
+    max-width: 50px;
+    margin-right: 10px; /* Agrega espacio entre la imagen y el texto */
+}
+
+.containerTablasSerie {
+    padding: 10px;
+    color: black;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 150%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Asegura que los elementos se distribuyan de manera uniforme */
+.tablasSerie, .tablasSerieVideo {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    flex: 1 1 auto;
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    margin: 20px;
+}
+
+/* Estilos específicos para las tablas normales */
+.tablasSerie {
+    max-width: 100%;
+}
+
+.tablasSerieMayor {
+    max-width: 20%;
+    height: 70%;
+}
+
+/* Estilos específicos para los videos */
+.tablasSerieVideo {
+    max-width: 60%;
+}
+
+/* Asegura que los dos últimos elementos estén a los lados */
+.containerTablasSerie:last-child {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+

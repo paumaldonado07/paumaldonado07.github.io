@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla del 1</title>
+    <link type="text/css" rel="stylesheet" href="estilos.css">
+</head>
+<body onload="multiplicarx1()">
+    <div class="containerPrincipal">
+        <header>
+            <div class="containerCabecera">
+                <h1>M&Eacute;TODO WALDORF</h1>
+            </div>
+        </header>
+        <nav class="containerNavegacion">
+            <div class="botonNavegacion" style="background-color: #ffb6bc;"><a href="Index.html">DEFINICI&Oacute;N MÉTODO WALDORF</a></div>
+            <div class="botonNavegacion" style="background-color: #A7D8FF;"><a href="paginaCreacionCirculos.html">CREACI&Oacute;N DE CIRCULOS WALDORF</a></div>
+            <div class="botonNavegacion" style="background-color: #e0bbfd;"><a href="paginaUsosCirculos.html">USO DE CIRCULOS WALDORF</a></div>
+        </nav>
+    <main class="containerContenido">
+        <aside>
+            <div class="containerAside">
+                <img id="imagenEstado" src="Imagenes/num1_Feliz.gif" width="100%" alt="Imagen de la tabla de multiplicar">
+            </div>
+        </aside>
+        <div class="containerCuerpo">
+            <div class="containerTitulo">
+                <h2>TABLA DE MULTIPLICAR DEL UNO (1)</h2>
+            </div>
+            <div class="containerTituloSeparado">
+                <h2 class="containerTituloSeparadoTexto">ESCRIBE LA RESPUESTA CORRECTA</h2>
+            </div>
+            <div class="containerContenidoMultiplicacion">
+                <div class="tablaMostrarNumeros">
+                    <span id="num1">1</span>
+                    <span id="operacionX">x</span>
+                    <span id="num2">0</span>
+                    <span id="signo">=</span>
+                    <span id="mensaje"></span>
+                    <input type="number" id="respuesta" aria-label="Respuesta" />
+                </div>
+            </div>
+            <div class="botones-container">
+                <button id="corregir" onclick="corregir()">COMPROBAR</button>
+                <button id="siguiente" onclick="multiplicarx1()" style="display: none;">SIGUIENTE</button>
+                <button id="reiniciar" onclick="reiniciar()" style="display: none;">🔄 REINICIAR</button>
+            </div>
+            <div id="botonRegresar" class="botonRegresar" style="display: none; text-align: center; margin-top: 20px;">
+                <a href="TablaDel1.html">REGRESAR</a>
+            </div>
+            <h3 id="puntuacion"></h3>
+        </div>
+        <script>
+            let num1 = document.getElementById("num1");
+            let num2 = document.getElementById("num2");
+            let respUser = document.getElementById("respuesta");
+            let mensaje = document.getElementById("mensaje");
+            let puntuacion = document.getElementById("puntuacion");
+            let botonSiguiente = document.getElementById("siguiente");
+            let botonCorregir = document.getElementById("corregir");
+            let botonReiniciar = document.getElementById("reiniciar");
+            let botonRegresar = document.getElementById("botonRegresar");
+            let signoIgual = document.getElementById("signo");
+            let operacionX = document.getElementById("operacionX");
+
+            let n1 = 1, n2 = 0;
+            let aciertos = 0, totalIntentos = 11;
+
+            function multiplicarx1() {
+                let imagenEstado = document.getElementById("imagenEstado");
+                
+                if (n2 > 10) {
+                    let mensajeFinal = aciertos > 7 
+                        ? `<img src="Imagenes/imgAciertoAlto.gif" width="100%"> </br> <div style="font-size:3vw"> Tienes ${aciertos} respuestas correctas.</div>` 
+                        : `<img src="Imagenes/imgAciertoBajo.gif" width="100%"> </br> <div style="font-size:3vw"> Tienes ${aciertos} respuestas correctas. </div> `;
+
+                    mensaje.innerHTML = mensajeFinal;
+                    puntuacion.innerHTML = `Tu puntuación final: ${aciertos} / ${totalIntentos}`;
+
+                    botonSiguiente.style.display = "none"; 
+                    botonCorregir.style.display = "none";  
+                    respUser.style.display = "none"; 
+                    botonReiniciar.style.display = "inline-block"; 
+                    botonRegresar.style.display = "block"; // Mostrar el botón REGRESAR en el contenedor
+                } else {
+                    mensaje.innerHTML = "";
+                    num1.innerHTML = n1;
+                    num2.innerHTML = n2;
+                    respUser.value = ""; 
+                    respUser.style.display = "inline-block"; 
+                    botonCorregir.style.display = "inline-block"; 
+                    botonSiguiente.style.display = "none"; 
+                    respUser.focus();
+
+                    num1.style.display = "inline";
+                    num2.style.display = "inline";
+                    operacionX.style.display = "inline";
+                    signoIgual.style.display = "inline";
+                    
+                    // Cambiar la imagen en el aside a num1_Feliz.gif al ir a la siguiente operación
+                    imagenEstado.src = "Imagenes/num1_Feliz.gif";
+                }
+            }
+
+            function corregir() {
+                let imagenEstado = document.getElementById("imagenEstado");
+
+                if (respUser.value === "") {
+                    num1.style.display = "none";
+                    num2.style.display = "none";
+                    operacionX.style.display = "none";
+                    signoIgual.style.display = "none";
+                    respUser.style.display = "none";
+                    botonCorregir.style.display = "none";
+
+                    mensaje.innerHTML = '<img src="Imagenes/imgComplete.gif" width="100%" style="padding-top: 45px;">';
+
+                    // Cambiar la imagen en el aside a num1_Feliz (vacío)
+                    imagenEstado.src = "Imagenes/num1_Feliz.gif"; 
+
+                    setTimeout(() => {
+                        mensaje.innerHTML = "";
+                        num1.style.display = "inline";
+                        num2.style.display = "inline";
+                        operacionX.style.display = "inline";
+                        signoIgual.style.display = "inline";
+                        respUser.style.display = "inline-block";
+                        botonCorregir.style.display = "inline-block";
+                        respUser.focus();  
+                    }, 800);
+                    return;
+                }
+
+                let solucion = n1 * n2;
+                if (parseInt(respUser.value) === solucion) {
+                    mensaje.innerHTML = '<img src="Imagenes/imgCorrecto.gif" width="100%" style="padding-top: 45px">';
+                    aciertos++; 
+                    
+                    // Cambiar la imagen en el aside a num1_Feliz (respuesta correcta)
+                    imagenEstado.src = "Imagenes/num1_Feliz.gif"; 
+
+                } else {
+                    mensaje.innerHTML = '<img src="Imagenes/imgIncorrecto.gif" width="100%" style="padding-top: 45px">';
+                    
+                    // Cambiar la imagen en el aside a num1_Triste (respuesta incorrecta)
+                    imagenEstado.src = "Imagenes/num1_Triste.gif"; 
+                }
+
+                num1.style.display = "none";
+                num2.style.display = "none";
+                operacionX.style.display = "none";
+                signoIgual.style.display = "none";
+
+                n2++; 
+
+                respUser.style.display = "none";
+                botonCorregir.style.display = "none";
+
+                botonSiguiente.style.display = "inline-block";
+            }
+
+            function reiniciar() {
+                aciertos = 0;
+                n2 = 0;
+
+                mensaje.innerHTML = "";
+                puntuacion.innerHTML = "";
+
+                botonReiniciar.style.display = "none";
+                botonRegresar.style.display = "none"; // Ocultar el botón REGRESAR
+
+                multiplicarx1();
+                
+            }
+        </script>
+    </main>
+    <footer class="containerPiePagina">
+        <div class="containerPiePagina2">23 de Enero de 2025</div>
+        <div class="containerPiePagina2">Método Waldorf</div>
+        <div class="containerPiePagina2">@phej_auly</div>
+    </footer>
+    </div>
+</body>
+</html>
+
